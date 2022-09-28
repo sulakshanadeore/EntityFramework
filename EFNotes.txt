@@ -1,0 +1,138 @@
+
+		Entity Framework
+------------------------------------------------
+ORM---> Object Relational Mapper
+OpenSource
+Integral part of .Net Framework 3.5
+
+Prior to 3.5  we used Ado.net to manage the data in the database.
+connected---> cn.open/ close
+disconnected---da,ds,dt,sqlcommandbuilder
+-----------------------------------------------
+
+Select the approach:
+1) Database First
+2) Model First 
+3) Code First
+
+
+ORM---> It enables developers to work with data using objects of domain specific classes without focusing on the underlying database tables,columns where the data is stored.
+
+
+Objects of Domain Specific Classes
+-------------------------------------
+HR Domain
+
+domain specific class----> create class of the entity.(attributes of the entity become properties in classes)
+
+Class Employee
+{
+prop---empid
+prop----ename
+prop---sal
+prop---dept
+
+}
+
+class Dept
+{
+prop--deptno
+dname
+loc
+mgr
+
+
+}
+
+
+
+employee emp=new employee();
+emp.empid=10;
+emp.ename="sdf'
+emp.sal=2342;
+------------------------------------------
+
+Institute Management System
+class Student
+{
+
+prop--studid
+studname
+etc
+}
+---------------------------------------------------
+abstraction using EF
+Console App
+Business Logic Layer
+EF(Data Access Layer)
+
+database
+
+-----------------------
+Features
+1) Open source
+2) Cross Platform---windows,Linux and Mac
+3) Modelling-----EF creates EDM(Entity Data Model) based on Plain Old CLR Objects(POCO) entities with
+get/set propertes of different datatypes, this is the model(class) which will be used to saving the data/entity or retrieving the data/entity from/to the database.
+4)Querying---LINQ(Extension methods,Lambda---Action/function/Predicate,Anonymous)
+LINQ-----Language Integrated Query
+Database----> DLINQ
+collections----->OLINQ
+XLINQ-----> XLINQ
+5) Saving--- SaveChanges()
+6)Concurrency----only single can work with the data at a time.
+7) Caching-----Cached 
+8) Built in Conventions-----particular way of naming things
+9) Configurations---App.config(connection string), DataAnnotations---Attributes applied to properties 
+of the classes.
+10) Migrations----changes that u want to the existing database will be possible using Migrations.
+
+---------------------------------------
+.net framework
+EF6 2013 .NET 4.0 onwards---
+EF5 2012 .NET 4.0 -- VS--2012
+4.3 2011 .NET 4.0-- VS 2012
+4.0 2010 .NET  4.0-- VS 2010
+1.0 2008 .NET3.5 Service Pack 1(VS 2008)
+
+------------------------
+
+.net core
+Core 1.0 2016
+core 1.1 Late 2016
+core 2.0 2017
+core 3.0
+core 4 
+------------------------------
+System.Data.SqlClient----connected/disconnected
+
+EDM(Entity Data Model)----class
+metadata
+1)Conceptual Model----
+2)Storage Model
+3) Mappings------> Relationship
+
+Entity SQL /LINQ to Entities
+
+Object Services
+Entity Client Data Provider
+(System.Data.Entity)->convert linq to sql/linq to entities into sql query
+Ado.net Provider----connects  with System.Data.SqlClient-(ado.net)
+Database
+
+--------------------------------------------------------
+HRContext:DBContext---->DB(HR)
+{
+DbSet<Employee> emp {get;set;}
+DbSet<Dept> dept {get;set;}
+
+}
+Class Employee----->Employee(table)
+Class Dept----->Dept(table)
+
+
+
+
+
+
+
